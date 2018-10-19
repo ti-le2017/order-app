@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 //import logo from './logo.svg';
-//import './App.css';
+import './App.css';
+import PageHeader from './components/page-header.js';
 
 import ProductList from './components/product_list.js';
 
@@ -9,37 +10,26 @@ class App extends Component {
     super(props);
 
     this.state = {
-      items: []
+      books: []
     }
   }
 
-  componentWillMount(){
-    fetch('http://jst.edchavez.com/api/inventory/getInventory/').then(results => {
-      return results.json();
-    }).then(data => {
-      this.setState({items: data});
-    })
+  componentDidMount(){
+    fetch('http://jst.edchavez.com/api/inventory/getInventory/')
+    .then(results => { return results.json() })
+    .then(data => { this.setState({books: data}) })
   }
 
   
 
   render () {
     return (
-      <div>
-        <ProductList products={this.state.items} />
+      <div className='container'>
+        <PageHeader />
+        <ProductList products={this.state.books} />
       </div>
     );
   }
 }
 
 export default App;
-
-
-
-  // const item = props.products.items.map((item) => {
-  //   return(
-  //     <productItems
-  //       key={item.itemId}
-  //       item={item}
-  //   )
-  // });
