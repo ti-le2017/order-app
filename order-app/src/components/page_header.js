@@ -1,6 +1,6 @@
 import React from 'react';
 import { Jumbotron, Container } from 'reactstrap';
-import './page-header.css';
+import './page_header.css';
 import GOT from '../assets/GOT_header.jpg';
 
 const PageHeader = (prop) => {

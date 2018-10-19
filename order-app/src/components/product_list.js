@@ -78,12 +78,11 @@ const ProductList = (props) => {
 	}
 
   return (
-  	<div>
+  	<div className='col-8 right-side'>
 
 	  	<div className='row'>
-	  		<div className='col-4'>
-			  </div>
-			  <div className='col-8'>
+
+			  <div>
 			    <CardDeck>
 			    	{row1}
 			    </CardDeck>
@@ -91,9 +90,8 @@ const ProductList = (props) => {
 	    </div>
 
 	  	<div className='row'>
-	  		<div className='col-4'>
-			  </div>
-			  <div className='col-8'>
+
+			  <div>
 			    <CardDeck>
 			    	{row2}
 			    </CardDeck>
@@ -101,9 +99,7 @@ const ProductList = (props) => {
 	    </div>
 
 	  	<div className='row'>
-	  		<div className='col-4'>
-			  </div>
-			  <div className='col-8'>
+			  <div>
 			    <CardDeck>
 			    	{row3}
 			    </CardDeck>
