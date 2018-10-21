@@ -1,0 +1,10 @@
+
+img {
+	max-height: 100%;
+	max-width: 1110px;
+}
+
+.jumbotron {
+	background-color: white;
+	padding: 0px;
+}

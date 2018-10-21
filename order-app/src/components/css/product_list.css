@@ -1,0 +1,15 @@
+
+.row{
+	padding-bottom: 10px;
+}
+
+.right-side{
+	display: inline-block;
+}
+
+/* Display card in 3 x 3 grid */
+.grid-container{
+	display: grid;
+	grid-gap: 5px;
+	grid-template-columns: auto auto auto;
+}

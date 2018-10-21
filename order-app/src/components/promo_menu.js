@@ -6,8 +6,6 @@ class PromoMenu extends Component {
 	constructor(props){
 		super(props);
 
-		console.log(this.props);
-
 		this.toggle = this.toggle.bind(this);
 		this.state = {
 			dropdownOpen: false
@@ -21,17 +19,18 @@ class PromoMenu extends Component {
 	}
 
 	render() {
+			console.log(this.props.promotion)
 		return (
 			<ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
 				<DropdownToggle caret>
 					Promotions
 				</DropdownToggle>
 				<DropdownMenu>
-					<DropdownItem header>Header</DropdownItem>
-					<DropdownItem disabled>Action</DropdownItem>
-					<DropdownItem>Another Action</DropdownItem>
-					<DropdownItem divider />
-					<DropdownItem>Another Action</DropdownItem>
+					{
+						this.props.promotion.map((promo, k) =>{
+							return <DropdownItem key={k}>{promo.promoAmt} {promo.promotionName}</DropdownItem>
+						})
+					}
 				</DropdownMenu>
 			</ButtonDropdown>
 		);
