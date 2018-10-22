@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-// Web & Custom fonts
 import './components/css/fonts.css';
 
 import Purchase from './components/purchase_page.js';
@@ -8,6 +7,7 @@ import PageHeader from './components/page_header.js';
 import ProductList from './components/product_list.js';
 import NavMenu from './components/nav.js';
 import Breadcrumb from './components/breadcrumb.js';
+import Footer from './components/footer.js';
 
 class App extends Component {
   constructor(props){
@@ -16,6 +16,7 @@ class App extends Component {
 
     this.state = {
       books: [],
+      selectedItem: []
     }
   }
 
@@ -29,16 +30,27 @@ class App extends Component {
     .then(data => { this.setState({books: data}) })
   }
 
+
+
   render () {
+
+    // Append selected item to the current state array
+    const handleValueChange = (value) => {
+      this.setState({ selectedItem: [...this.state.selectedItem, value]})}
+
     return (
       <div className='container'>
         <NavMenu />
         <div>
           <PageHeader />
           <Breadcrumb />
-          <ProductList products={this.state.books} />
-          <Purchase />
+          <ProductList
+            onItemSelect={item=> handleValueChange(item)}
+            products={this.state.books}
+          />
+          <Purchase inCart={this.state.selectedItem} />
         </div>
+        <Footer />
       </div>
     );
   }

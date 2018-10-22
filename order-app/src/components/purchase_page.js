@@ -3,11 +3,14 @@ import './css/purchase_page.css';
 
 import PromoMenu from './promo_menu.js';
 import Cart from './cart.js';
+import Shipping from './shipping.js';
 
 
 class Purchase extends Component {
 	constructor(props){
 		super(props);
+
+
 
 		this.state = {
 			promos: [],
@@ -15,7 +18,6 @@ class Purchase extends Component {
 
 		}
 	}
-
 
   componentDidMount(){
     this.promosFetch();
@@ -38,9 +40,9 @@ class Purchase extends Component {
 	render () {
 		return (
 			<div className='col-4 left-side'>
-				<Cart />
+				<Cart inCart={this.props.inCart}/>
 				<PromoMenu promotion={this.state.promos} />
-
+				<Shipping shipping={this.state.shipping}/>
 			</div>
 
 		);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron, Container } from 'reactstrap';
+import { Jumbotron } from 'reactstrap';
 import './css/page_header.css';
 import GOT from '../assets/GOT_header.jpg';
 

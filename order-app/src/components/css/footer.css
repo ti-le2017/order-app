@@ -1,0 +1,28 @@
+.footer{
+  border-top: 1px solid black;
+  margin-top: 40px;
+  padding:100px;
+  width: 100%;
+  text-align: center;
+}
+
+.footer-menu-one ul{
+  list-style-type: none;
+}
+
+.footer-menu-one ul li{
+  display: inline-block;
+  margin: 0px 20px;
+}
+
+.footer-menu-one ul li a {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.footer-bottom{
+  width: 100%;
+  height: auto;
+  margin: auto;
+}

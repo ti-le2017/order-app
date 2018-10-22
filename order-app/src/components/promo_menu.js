@@ -19,7 +19,6 @@ class PromoMenu extends Component {
 	}
 
 	render() {
-			console.log(this.props.promotion)
 		return (
 			<ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
 				<DropdownToggle caret>

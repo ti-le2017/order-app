@@ -11,14 +11,17 @@ const ProductList = (props) => {
 	if(!books){
 		console.log('loading...')
 	} else {
-
 		productItem = books.map((item) => {
+
 			return (
 				<Item
+					// onItemSelect passing selected item back to App selectedItem state
+					onItemSelect={props.onItemSelect}
 					key={item.itemId}
 					item={item} />
 				)
-			});
+
+		});
 	}
 
   return (
